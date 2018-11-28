@@ -4,9 +4,19 @@ fun main(args: Array<String>) {
     val isBlessed = true
     val isImmortal = false
     val auraVisible = isBlessed && healthPoints > 50 || isImmortal
-
+    //Check karma
+    val karma = (Math.pow(Math.random(),(110 - healthPoints)/100.0) * 20).toInt()
     //Aura
-    val auraColor = if(auraVisible) "GREEN" else "NONE"
+    val auraColor = if(auraVisible){
+        when(karma){
+            in 0..5 -> "RED"
+            in 6..10 -> "ORANGE"
+            in 11..15 -> "PURPLE"
+            else -> "GREEN"
+        }
+    } else{
+        "NONE"
+    }
     println("(Aura: $auraColor" +
     "(Blessed: ${if(isBlessed) "YES" else "No"})")
 
