@@ -17,8 +17,8 @@ fun main(args: Array<String>) {
     } else{
         "NONE"
     }
-    println("(Aura: $auraColor" +
-    "(Blessed: ${if(isBlessed) "YES" else "No"})")
+    //println("(Aura: $auraColor" +
+    //"(Blessed: ${if(isBlessed) "YES" else "No"})")
 
     val healthStatus = when(healthPoints){
         100 -> "is in excellent condition!"
@@ -33,8 +33,13 @@ fun main(args: Array<String>) {
     }
 
     //Player status
-    println("$name $healthStatus")
 
+    val HP="HP: $healthPoints"
+    val A ="Aura: $auraColor"
+    val H ="$name $healthStatus"
+    val statusFormatString = "(%s)(%s) -> %s"
+
+    println(statusFormatString.format(HP,A,H))
 
 
 }
