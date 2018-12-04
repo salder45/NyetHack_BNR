@@ -7,7 +7,8 @@ fun main(args: Array<String>) {
     val healthStatus = formatHealthStatus(healthPoints, isBlessed)
     printPlayerStatus(auraColor, isBlessed, name, healthStatus)
 
-    castFireball()
+    val inebriation = castFireball()
+    println(getInebriationStatus(inebriation))
 
 }
 
@@ -43,5 +44,17 @@ private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean): String =
     }
 
 
-private fun castFireball(numFireballs: Int = 2) =
+private fun castFireball(numFireballs: Int = 2): Int {
     println("A glass of Fireball springs into existence. (x$numFireballs)")
+    val inebriationValue: Int = numFireballs * 2
+    return if(inebriationValue in 1..50) inebriationValue else 50
+}
+
+private fun getInebriationStatus(inebriationStatus: Int): String=
+    when(inebriationStatus){
+        in 1..10 -> "Tipsy"
+        in 11..20 -> "sloshed"
+        in 21..30 -> "soused"
+        in 31..40 -> "stewed"
+        else -> "..t0aSt3d"
+    }
