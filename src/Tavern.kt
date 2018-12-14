@@ -6,5 +6,6 @@ fun main(args: Array<String>) {
     }else{
         println("I can't do that without crashing - beverage was null!")
     }
-    println(beverage)
+    val beverageServed: String = beverage ?: "Buttered Ale"
+    println(beverageServed)
 }
