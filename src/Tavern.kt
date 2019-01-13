@@ -1,5 +1,8 @@
 import kotlin.math.roundToInt
 const val TAVERN_NAME = "Taernly's Folly"
+const val CASK_DRAGONS_BREATH = 1
+const val GALLONS_PER_CASK = 5
+const val PINT = 0.125
 
 var playerGold = 10
 var playerSilver = 10
@@ -22,6 +25,13 @@ fun perfomrPurchase(price: Double){
     playerGold = remainingGold
     playerSilver = remainingSilver
     displayBalance()
+
+    //GALLONS AFTER 12 DRAGONS BREATH
+    val totalPints: Double = GALLONS_PER_CASK / PINT
+    println("Total Pints: $totalPints")
+    val remainingPints = totalPints - 12
+    println("After selling 12 dragon's breath the remaining pints are: $remainingPints")
+    println("Remainin gallons right now are ${remainingPints * 0.125}")
 }
 
 private fun displayBalance(){
