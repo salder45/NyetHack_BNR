@@ -15,13 +15,17 @@ fun perfomrPurchase(price: Double){
     println("Purchasing item for $price")
 
     val remainingBalance = totalPurse - price
-    println("Remaining balance: ${"%.2f".format(remainingBalance)}")
+    if(remainingBalance > 0.0) {
+        println("Remaining balance: ${"%.2f".format(remainingBalance)}")
 
-    val remainingGold = remainingBalance.toInt()
-    val remainingSilver = (remainingBalance % 1 * 100).toInt()
-    playerGold = remainingGold
-    playerSilver = remainingSilver
-    displayBalance()
+        val remainingGold = remainingBalance.toInt()
+        val remainingSilver = (remainingBalance % 1 * 100).toInt()
+        playerGold = remainingGold
+        playerSilver = remainingSilver
+        displayBalance()
+    }else{
+        println("You need to pay your drinks first sir Madrigal")
+    }
 }
 
 private fun displayBalance(){
