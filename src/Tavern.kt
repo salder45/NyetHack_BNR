@@ -1,8 +1,7 @@
 import kotlin.math.roundToInt
 const val TAVERN_NAME = "Taernly's Folly"
 
-var playerGold = 10
-var playerSilver = 10
+var dragonCoin = 5.0
 
 fun main(args: Array<String>) {
     placeOrder("shandy,Dragon's Breath,5.91")
@@ -10,22 +9,20 @@ fun main(args: Array<String>) {
 
 fun perfomrPurchase(price: Double){
     displayBalance()
-    val totalPurse = playerGold + (playerSilver / 100.0)
+    val totalPurse = dragonCoin * 1.43
     println("Total purse: $totalPurse")
     println("Purchasing item for $price")
 
     val remainingBalance = totalPurse - price
     println("Remaining balance: ${"%.2f".format(remainingBalance)}")
 
-    val remainingGold = remainingBalance.toInt()
-    val remainingSilver = (remainingBalance % 1 * 100).toInt()
-    playerGold = remainingGold
-    playerSilver = remainingSilver
+
+    dragonCoin = remainingBalance / 1.43
     displayBalance()
 }
 
 private fun displayBalance(){
-    println("Player's purse balance: Gold: $playerGold , Silver: $playerSilver")
+    println("Player's purse balance: Dragoncoin: ${"%.4f".format(dragonCoin)}")
 }
 
 private fun toDragonsSpeak(prhase: String)=
