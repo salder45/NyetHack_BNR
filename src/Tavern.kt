@@ -102,12 +102,14 @@ private fun printMenu(menuList :List<String>){
     var nameMaxLenght = 0
     var priceIntMaxLenght = 0
     var priceIntCentsMaxLenght = 0
+    var typesNames = mutableSetOf<String>()
     menuList.forEach { menuItem ->
         val (type,name,price) = menuItem.split(',')
         nameMaxLenght = if(nameMaxLenght < name.length) name.length else nameMaxLenght
         val (numbers,cents) = price.split('.')
         priceIntMaxLenght = if(priceIntMaxLenght < numbers.length) numbers.length else priceIntMaxLenght
         priceIntCentsMaxLenght = if(priceIntCentsMaxLenght < cents.length) cents.length else priceIntCentsMaxLenght
+        typesNames.add("~[${type}]~")
     }
     //
     var menuListWithFormat = mutableListOf<String>()
@@ -120,11 +122,18 @@ private fun printMenu(menuList :List<String>){
         val dotsBeforePrice = priceIntMaxLenght - numbers.length
         val dotsAfterName = (nameMaxLenght - name.length) + (menuStandarLenght - (priceIntMaxLenght + priceIntCentsMaxLenght + 1)) +dotsBeforePrice
         //
-        menuListWithFormat.add("${name.capitalize()}${".".repeat(dotsAfterName)}${numbers}.${cents}${"0".repeat(zeroes)}")
+        menuListWithFormat.add("~[${type}]~,${name.capitalize()}${".".repeat(dotsAfterName)}${numbers}.${cents}${"0".repeat(zeroes)}")
     }
     //
-    menuListWithFormat.forEach{menuItem ->
-        println(menuItem)
+    typesNames.forEach {typeStr ->
+        val spaces = ((nameMaxLenght + menuStandarLenght) - typeStr.length) / 2
+        println("${" ".repeat(spaces)}$typeStr")
+        menuListWithFormat.forEach{menuItem ->
+            val (type,item ) = menuItem.split(',')
+            if(type.equals(typeStr)) {
+                println(item)
+            }
+        }
     }
     println()
 }
