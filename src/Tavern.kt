@@ -9,8 +9,12 @@ val patronList = mutableListOf("Eli", "Mordoc", "Sophie")
 val lastName = listOf("Ironfoot","Fernsworth","Baggins")
 val uniquePatrons = mutableSetOf<String>()
 val menuList = File("data/tavern-menu-items.txt").readText().split("\n")
+val menuStandarLenght = 18
 
 fun main(args: Array<String>) {
+    //
+    printMenu(menuList)
+    //
     if(patronList.contains("Eli")){
         println("The tavern master says: Eli's in the back playing cards.")
     }else{
@@ -90,4 +94,37 @@ private fun placeOrder(patronName: String,menuData: String){
    }
 
     println(phrase)
+}
+
+private fun printMenu(menuList :List<String>){
+    println("**** Welcome to ${TAVERN_NAME} ****")
+    println()
+    var nameMaxLenght = 0
+    var priceIntMaxLenght = 0
+    var priceIntCentsMaxLenght = 0
+    menuList.forEach { menuItem ->
+        val (type,name,price) = menuItem.split(',')
+        nameMaxLenght = if(nameMaxLenght < name.length) name.length else nameMaxLenght
+        val (numbers,cents) = price.split('.')
+        priceIntMaxLenght = if(priceIntMaxLenght < numbers.length) numbers.length else priceIntMaxLenght
+        priceIntCentsMaxLenght = if(priceIntCentsMaxLenght < cents.length) cents.length else priceIntCentsMaxLenght
+    }
+    //
+    var menuListWithFormat = mutableListOf<String>()
+    //
+    menuList.forEach { menuItem ->
+        val (type,name,price) = menuItem.split(',')
+        val (numbers,cents) = price.split('.')
+        //
+        val zeroes = priceIntCentsMaxLenght - cents.length
+        val dotsBeforePrice = priceIntMaxLenght - numbers.length
+        val dotsAfterName = (nameMaxLenght - name.length) + (menuStandarLenght - (priceIntMaxLenght + priceIntCentsMaxLenght + 1)) +dotsBeforePrice
+        //
+        menuListWithFormat.add("${name.capitalize()}${".".repeat(dotsAfterName)}${numbers}.${cents}${"0".repeat(zeroes)}")
+    }
+    //
+    menuListWithFormat.forEach{menuItem ->
+        println(menuItem)
+    }
+    println()
 }
