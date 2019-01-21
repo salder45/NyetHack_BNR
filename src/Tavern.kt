@@ -32,6 +32,7 @@ fun main(args: Array<String>) {
     uniquePatrons.forEach{
         patronGold[it] = 6.0
     }
+    displayPatronBalances()
     //
     var orderCount = 0
     while(orderCount <= 9 ){
@@ -42,9 +43,17 @@ fun main(args: Array<String>) {
     displayPatronBalances()
 }
 
-fun perfomrPurchase(price: Double, patronName: String){
+fun perfomrPurchase(price: Double, patronName: String): Boolean{
     val totalPurse = patronGold.getValue(patronName)
-    patronGold[patronName] = totalPurse - price
+    if(totalPurse - price > 0) {
+        patronGold[patronName] = totalPurse - price
+        return true
+    }else{
+        println("Can you leave please?")
+        uniquePatrons.remove(patronName)
+        patronGold.remove(patronName)
+        return false
+    }
 }
 
 private fun toDragonsSpeak(prhase: String)=
@@ -69,15 +78,16 @@ private fun placeOrder(patronName: String,menuData: String){
     val message = "$patronName buys a $name ($type) for $price"
     println(message)
 
-    perfomrPurchase(price.toDouble(), patronName)
+    val isPurchaseSuccessful = perfomrPurchase(price.toDouble(), patronName)
+    if(isPurchaseSuccessful) {
+        val phrase = if (name == "Dragon's Breath") {
+            "$patronName exclaims ${toDragonsSpeak("Ah, delicious $name!")}"
+        } else {
+            "$patronName says: Thank you for the $name."
+        }
+        println(phrase)
+    }
 
-   val phrase = if (name == "Dragon's Breath"){
-       "$patronName exclaims ${toDragonsSpeak("Ah, delicious $name!")}"
-   }else{
-       "$patronName says: Thank you for the $name."
-   }
-
-    println(phrase)
 }
 
 private fun displayPatronBalances(){
