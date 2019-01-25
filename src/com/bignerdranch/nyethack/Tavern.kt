@@ -1,4 +1,5 @@
-import kotlin.math.roundToInt
+package com.bignerdranch.nyethack
+
 import java.io.File
 
 const val TAVERN_NAME = "Taernly's Folly"
@@ -26,7 +27,7 @@ fun main(args: Array<String>) {
         val first = patronList.shuffled().first()
         val last = lastName.shuffled().first()
         val name = "$first $last"
-        uniquePatrons+= name
+        uniquePatrons += name
     }
 
     uniquePatrons.forEach{
@@ -35,7 +36,10 @@ fun main(args: Array<String>) {
     //
     var orderCount = 0
     while(orderCount <= 9 ){
-        placeOrder(uniquePatrons.shuffled().first(), menuList.shuffled().first())
+        placeOrder(
+            uniquePatrons.shuffled().first(),
+            menuList.shuffled().first()
+        )
         orderCount++
     }
 

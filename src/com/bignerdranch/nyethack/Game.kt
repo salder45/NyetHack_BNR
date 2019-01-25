@@ -1,3 +1,5 @@
+package com.bignerdranch.nyethack
+
 fun main(args: Array<String>) {
 
 
@@ -18,7 +20,7 @@ private fun printPlayerStatus(
         "(Aura: ${player.auraColor()}" +
                 "(Blessed: ${if (player.isBlessed) "YES" else "No"})"
     )
-    //Player status
+    //com.bignerdranch.nyethack.Player status
     println("${player.name} ${player.formatHealthStatus()}")
 }
 
