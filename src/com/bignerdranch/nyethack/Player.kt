@@ -1,11 +1,15 @@
 package com.bignerdranch.nyethack
 
+import java.io.File
+
 class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean, private val isImmortal: Boolean){
     var name = _name
-    get() = field.capitalize()
+    get() = "${field.capitalize()} of $hometown"
     private set(value){
         field = value.trim()
     }
+
+    val hometown: String = selectHometown()
 
     init{
         require(healthPoints > 0 , { "healthPoints must be greater than zero." })
@@ -39,4 +43,10 @@ class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean,
             in 15..74 -> "looks pretty hurt."
             else -> "is in awful condition!"
         }
+
+    private fun  selectHometown() = File("data/towns.txt")
+        .readText()
+        .split("\n")
+        .shuffled()
+        .first()
 }
