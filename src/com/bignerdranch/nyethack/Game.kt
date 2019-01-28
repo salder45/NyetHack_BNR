@@ -10,6 +10,9 @@ fun main(args: Array<String>) {
     printPlayerStatus(player)
 
 
+    var currentRoom = Room("Foyer")
+    println(currentRoom.description())
+    println(currentRoom.load())
 
 }
 
