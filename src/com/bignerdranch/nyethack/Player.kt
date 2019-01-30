@@ -10,6 +10,7 @@ class Player(_name: String, var healthPoints: Int = 100, val isBlessed: Boolean,
     }
 
     val hometown: String = selectHometown()
+    val currentPosition = Coordinate(0,0)
 
     init{
         require(healthPoints > 0 , { "healthPoints must be greater than zero." })
