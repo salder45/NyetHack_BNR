@@ -62,6 +62,7 @@ object Game{
         fun processCommand() = when(command.toLowerCase()){
             "quit" -> "Goodbye!"
             "move" -> move(argument)
+            "map" -> printMap()
             else -> commandNotFound()
         }
 
@@ -83,6 +84,23 @@ object Game{
             }catch (e: Exception){
                 "Invalid direction: $directionInput"
             }
+
+    private fun printMap(): String {
+        var map = ""
+        worldMap.forEachIndexed { indexY, list ->
+            list.forEachIndexed { indexX, room ->
+                if (indexY == player.currentPosition.y && indexX == player.currentPosition.x){
+                    map += " X"
+                }else{
+                    map += " 0"
+                }
+            }
+            map +="\n"
+        }
+        return map
+    }
+
+
 
 }
 
