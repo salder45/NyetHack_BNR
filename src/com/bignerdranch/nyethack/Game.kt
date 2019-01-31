@@ -1,5 +1,7 @@
 package com.bignerdranch.nyethack
 
+import java.lang.IllegalStateException
+
 fun main(args: Array<String>) {
 
     Game.play()
@@ -11,8 +13,12 @@ fun main(args: Array<String>) {
 object Game{
 
     private val player = Player("Madrigal")
-    private var currentRoom = TownSquare()
+    private var currentRoom: Room = TownSquare()
 
+    private var worldMap = listOf(
+        listOf(currentRoom, Room("Tavern"), Room("Back Room")),
+        listOf(Room("Long Corridor"), Room("Generic Room"))
+        )
 
     init {
         println("Welcome adventurer.")
@@ -50,11 +56,28 @@ object Game{
         val argument = input.split(" ").getOrElse(1,{ "" })
 
         fun processCommand() = when(command.toLowerCase()){
+            "move" -> move(argument)
             else -> commandNotFound()
         }
 
         private fun commandNotFound() = "I'm not quite sure what you're trying to do!"
     }
+
+    private fun move(directionInput: String) =
+            try{
+                val direction = Direction.valueOf(directionInput.toUpperCase())
+                val newPosition = direction.updateCoordinate(player.currentPosition)
+                if(!newPosition.isInBounds){
+                    throw IllegalStateException("$direction is out of bounds")
+                }
+
+                val newRoom = worldMap[newPosition.y][newPosition.x]
+                player.currentPosition = newPosition
+                currentRoom = newRoom
+                "Ok, you move $direction to the ${newRoom.name}.\n${newRoom.load()}"
+            }catch (e: Exception){
+                "Invalid direction: $directionInput"
+            }
 
 }
 
