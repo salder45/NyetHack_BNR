@@ -35,7 +35,11 @@ object Game{
 
             //control section
             print("> Enter your command: ")
-            println(GameInput(readLine()).processCommand())
+            val inputResponse = GameInput(readLine()).processCommand()
+            println(inputResponse)
+            if(inputResponse == "Goodbye!"){
+                break
+            }
         }
     }
 
@@ -56,6 +60,7 @@ object Game{
         val argument = input.split(" ").getOrElse(1,{ "" })
 
         fun processCommand() = when(command.toLowerCase()){
+            "quit" -> "Goodbye!"
             "move" -> move(argument)
             else -> commandNotFound()
         }
