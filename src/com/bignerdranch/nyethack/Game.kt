@@ -63,6 +63,7 @@ object Game{
             "quit" -> "Goodbye!"
             "move" -> move(argument)
             "map" -> printMap()
+            "ring" -> ringTownSquareBell()
             else -> commandNotFound()
         }
 
@@ -98,6 +99,14 @@ object Game{
             map +="\n"
         }
         return map
+    }
+
+    private fun ringTownSquareBell(): String{
+        return if(currentRoom is TownSquare)
+            (currentRoom as TownSquare).ringBell()
+        else
+            "You can't ring the bells from here."
+
     }
 
 
