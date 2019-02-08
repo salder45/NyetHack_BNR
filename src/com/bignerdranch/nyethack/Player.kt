@@ -1,7 +1,7 @@
 package com.bignerdranch.nyethack
 
 import java.io.File
-import com.bignerdranch.nyethack.extensions.random
+import com.bignerdranch.nyethack.extensions.random as randomizer
 
 class Player(_name: String, override var healthPoints: Int = 100, val isBlessed: Boolean, private val isImmortal: Boolean): Fightable{
     override val diceCount: Int = 3
@@ -64,5 +64,5 @@ class Player(_name: String, override var healthPoints: Int = 100, val isBlessed:
     private fun  selectHometown() = File("data/towns.txt")
         .readText()
         .split("\n")
-        .random()
+        .randomizer()
 }
