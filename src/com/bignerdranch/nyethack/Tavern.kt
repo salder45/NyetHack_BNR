@@ -1,6 +1,8 @@
 package com.bignerdranch.nyethack
 
 import java.io.File
+import com.bignerdranch.nyethack.extensions.random
+
 
 const val TAVERN_NAME = "Taernly's Folly"
 
@@ -10,7 +12,6 @@ val uniquePatrons = mutableSetOf<String>()
 val menuList = File("data/tavern-menu-items.txt").readText().split("\n")
 val patronGold = mutableMapOf<String, Double>()
 
-private fun <T> Iterable<T>.random(): T = this.shuffled().first()
 
 fun main(args: Array<String>) {
     if(patronList.contains("Eli")){
