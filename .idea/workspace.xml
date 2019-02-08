@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11656fdf-9c03-4d9d-b2b0-a494ad3ab11a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/bignerdranch/nyethack/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bignerdranch/nyethack/Player.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bignerdranch/nyethack/Tavern.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bignerdranch/nyethack/Tavern.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/bignerdranch/nyethack/Tavern.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+            <state relative-caret-position="250">
+              <caret line="64" column="22" lean-forward="true" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
               <folding>
                 <element signature="e#35#119#0" expanded="true" />
               </folding>
@@ -73,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bignerdranch/nyethack/Player.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+            <state relative-caret-position="210">
+              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
               <folding>
                 <element signature="e#35#119#0" expanded="true" />
               </folding>
@@ -114,8 +114,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>random</find>
       <find>select</find>
+      <find>random</find>
+      <find>Welcome</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -138,8 +139,8 @@
         <option value="$PROJECT_DIR$/src/com/bignerdranch/nyethack/Room.kt" />
         <option value="$PROJECT_DIR$/src/com/bignerdranch/nyethack/Game.kt" />
         <option value="$PROJECT_DIR$/src/com/bignerdranch/nyethack/extensions/IterableExt.kt" />
-        <option value="$PROJECT_DIR$/src/com/bignerdranch/nyethack/Tavern.kt" />
         <option value="$PROJECT_DIR$/src/com/bignerdranch/nyethack/Player.kt" />
+        <option value="$PROJECT_DIR$/src/com/bignerdranch/nyethack/Tavern.kt" />
       </list>
     </option>
   </component>
@@ -190,7 +191,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549593757003" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549595991400" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
@@ -210,7 +211,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.com.bignerdranch.nyethack.GameKt">
+  <component name="RunManager" selected="Kotlin.com.bignerdranch.nyethack.TavernKt">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -278,8 +279,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.com.bignerdranch.nyethack.GameKt" />
         <item itemvalue="Kotlin.com.bignerdranch.nyethack.TavernKt" />
+        <item itemvalue="Kotlin.com.bignerdranch.nyethack.GameKt" />
         <item itemvalue="Kotlin.com.bignerdranch.nyethack.SwordJugglerKt" />
       </list>
     </recent_temporary>
@@ -301,7 +302,7 @@
     <frame x="123" y="23" width="1747" height="956" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19002932" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19002932" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="DB Browser" order="3" />
@@ -313,7 +314,7 @@
       <window_info id="Image Layers" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49912024" weight="0.3298611" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49853373" visible="true" weight="0.3298611" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -321,7 +322,7 @@
       <window_info anchor="bottom" id="Console" order="7" />
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50087976" side_tool="true" visible="true" weight="0.3298611" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5014663" side_tool="true" weight="0.3298611" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3298611" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.3298611" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="13" show_stripe_button="false" />
@@ -386,13 +387,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bignerdranch/nyethack/extensions/IterableExt.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bignerdranch/nyethack/Game.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="978">
@@ -403,20 +397,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bignerdranch/nyethack/Tavern.kt">
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/String.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        <state>
           <folding>
-            <element signature="e#35#119#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/text/Strings.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bignerdranch/nyethack/Player.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+        <state relative-caret-position="210">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="e#35#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bignerdranch/nyethack/extensions/IterableExt.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bignerdranch/nyethack/Tavern.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="64" column="22" lean-forward="true" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
           <folding>
             <element signature="e#35#119#0" expanded="true" />
           </folding>

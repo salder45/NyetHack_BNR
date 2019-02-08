@@ -47,6 +47,8 @@ fun main(args: Array<String>) {
     }
 
     displayPatronBalances()
+    //
+    print("Welcome, Madrigal".frame(5))
 }
 
 fun perfomrPurchase(price: Double, patronName: String){
@@ -54,8 +56,8 @@ fun perfomrPurchase(price: Double, patronName: String){
     patronGold[patronName] = totalPurse - price
 }
 
-private fun toDragonsSpeak(prhase: String)=
-    prhase.replace(Regex("[aeiou]")){
+private fun String.toDragonsSpeak()=
+    this.replace(Regex("[aeiou]")){
         when(it.value){
             "a" -> "4"
             "e" -> "3"
@@ -65,6 +67,15 @@ private fun toDragonsSpeak(prhase: String)=
             else -> it.value
         }
     }
+
+private fun String.frame( padding: Int, formatChar: String = "*") : String{
+    val greeting = "$this"
+    val middle = formatChar.padEnd(padding)
+        .plus(greeting)
+        .plus(formatChar.padStart(padding))
+    val end = (0 until middle.length).joinToString("") { formatChar }
+    return "$end\n$middle\n$end"
+}
 
 private fun placeOrder(patronName: String,menuData: String){
     val indexOfApostrophe = TAVERN_NAME.indexOf('\'')
@@ -79,7 +90,7 @@ private fun placeOrder(patronName: String,menuData: String){
     perfomrPurchase(price.toDouble(), patronName)
 
    val phrase = if (name == "Dragon's Breath"){
-       "$patronName exclaims ${toDragonsSpeak("Ah, delicious $name!")}"
+       "$patronName exclaims ${"Ah, delicious $name!".toDragonsSpeak()}"
    }else{
        "$patronName says: Thank you for the $name."
    }
